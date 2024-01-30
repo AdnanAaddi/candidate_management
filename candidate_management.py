@@ -24,6 +24,10 @@ def search_candidate(user_data):
          return
      print(user_data[email])
 
+def display_candidates(user_data):
+    print("All Candidates Data")
+    for i in user_data.items():
+        print(i)
 
 
 user_data= {}
@@ -31,8 +35,8 @@ while True:
     print("1. For Candidate Addition ")
     print("2. For Candidate Removal ")
     print("3. For Candidate Searching ")
-    print("5. Display all data ")
-    print("4. For Exit ")
+    print("4. Display all data ")
+    print("5. For Exit ")
     choice = int(input("Please enter your choice: "))
     if choice == 1:
         add_candidate(user_data)
@@ -41,7 +45,7 @@ while True:
     elif choice == 3:
         search_candidate(user_data)
     elif choice == 4:
-        pass
+        display_candidates(user_data)
     elif choice == 5:
         break
     else:
