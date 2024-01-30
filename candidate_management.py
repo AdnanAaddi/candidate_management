@@ -17,12 +17,20 @@ def remove_candidate(user_data):
     else:
         print("Candidate with this email doesnt exists")
 
+def search_candidate(user_data):
+     email = input("Please enter the Candidate email that you want to Find Out: ")
+     if email not in user_data:
+         print("Candidate with this email doesnt exists")
+         return
+     print(user_data[email])
+
+
 
 user_data= {}
 while True:
-    print("1. For Data Addition ")
-    print("2. For Data Removal ")
-    print("3. For Data Searching ")
+    print("1. For Candidate Addition ")
+    print("2. For Candidate Removal ")
+    print("3. For Candidate Searching ")
     print("5. Display all data ")
     print("4. For Exit ")
     choice = int(input("Please enter your choice: "))
@@ -30,3 +38,13 @@ while True:
         add_candidate(user_data)
     elif choice == 2:
         remove_candidate(user_data)
+    elif choice == 3:
+        search_candidate(user_data)
+    elif choice == 4:
+        pass
+    elif choice == 5:
+        break
+    else:
+        print("Please provide the valid Input")
+
+
