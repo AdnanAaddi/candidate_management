@@ -9,6 +9,15 @@ def add_candidate(user_date):
     user_data[email] = {"name": name, "age": age, "address": address}
     print("Data added successfully!")
 
+def remove_candidate(user_data):
+    email = input("Please enter the Candidate email that you want to remove: ")
+    if email in user_data:
+        removed_user= user_data.pop(email)
+        print(removed_user["name"], "has ben removed Sucessfully")
+    else:
+        print("Candidate with this email doesnt exists")
+
+
 user_data= {}
 while True:
     print("1. For Data Addition ")
@@ -19,3 +28,5 @@ while True:
     choice = int(input("Please enter your choice: "))
     if choice == 1:
         add_candidate(user_data)
+    elif choice == 2:
+        remove_candidate(user_data)
