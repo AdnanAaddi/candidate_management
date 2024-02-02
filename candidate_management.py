@@ -6,13 +6,14 @@ def add_candidate(user_date):
     name = input("Enter Candidate Name: ")
     age = int(input("Enter Candidate Age: "))
     address = input("Enter the Candidate Address: ")
-    user_data[email] = {"name": name, "age": age, "address": address}
+    user_data[email] = {"name": name, "äge": age, "address": address} 
     print("Data added successfully!")
 
 def remove_candidate(user_data):
     email = input("Please enter the Candidate email that you want to remove: ")
     if email in user_data:
         removed_user= user_data.pop(email)
+        print(removed_user)
         print(removed_user["name"], "has ben removed Sucessfully")
     else:
         print("Candidate with this email doesnt exists")
@@ -26,8 +27,7 @@ def search_candidate(user_data):
 
 def display_candidates(user_data):
     print("All Candidates Data")
-    for i in user_data.items():
-        print(i)
+    print(user_data)
 
 
 user_data= {}
